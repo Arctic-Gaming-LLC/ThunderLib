@@ -1,0 +1,7 @@
+name: ThunderLib
+version: '${project.version}'
+main: dev.arcticgaming.thunderlib.ThunderLib
+api-version: 1.19
+load: STARTUP
+loadbefore: [ ThunderDataEngine ]
+authors: [ ArcticDev ]
