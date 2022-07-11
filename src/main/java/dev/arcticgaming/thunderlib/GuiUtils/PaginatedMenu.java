@@ -27,7 +27,7 @@ public abstract class PaginatedMenu extends Menu {
         ItemStack cancelButton = new ItemStack(Material.STICK);
         ItemMeta cancelButtonMeta = cancelButton.getItemMeta();
         cancelButtonMeta.setCustomModelData(21);
-        cancelButtonMeta.displayName(Component.text("Cancel"));
+        cancelButtonMeta.displayName(Component.text(ChatColor.DARK_RED + "Cancel"));
         cancelButton.setItemMeta(cancelButtonMeta);
 
 
