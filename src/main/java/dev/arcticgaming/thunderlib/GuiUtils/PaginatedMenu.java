@@ -30,13 +30,25 @@ public abstract class PaginatedMenu extends Menu {
         cancelButtonMeta.displayName(Component.text(ChatColor.DARK_RED + "Cancel"));
         cancelButton.setItemMeta(cancelButtonMeta);
 
+        ItemStack leftButton = new ItemStack(Material.STICK);
+        ItemMeta leftButtonMeta = leftButton.getItemMeta();
+        leftButtonMeta.setCustomModelData(22);
+        leftButtonMeta.displayName(Component.text(ChatColor.YELLOW + "Previous Page"));
+        leftButton.setItemMeta(leftButtonMeta);
+
+        ItemStack rightButton = new ItemStack(Material.STICK);
+        ItemMeta rightButtonMeta = rightButton.getItemMeta();
+        rightButtonMeta.setCustomModelData(21);
+        rightButtonMeta.displayName(Component.text(ChatColor.YELLOW + "Next Page"));
+        rightButton.setItemMeta(rightButtonMeta);
 
 
-        inventory.setItem(48, makeItem(Material.DARK_OAK_BUTTON, ChatColor.GREEN + "Left"));
+
+        inventory.setItem(48, leftButton);
 
         inventory.setItem(49, cancelButton);
 
-        inventory.setItem(50, makeItem(Material.DARK_OAK_BUTTON, ChatColor.GREEN + "Right"));
+        inventory.setItem(50, rightButton);
 
         for (int i = 0; i < 54; i++) {
             if (inventory.getItem(i) == null) {
