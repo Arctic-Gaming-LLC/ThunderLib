@@ -1,7 +1,10 @@
 package dev.arcticgaming.thunderlib.GuiUtils;
 
+import net.kyori.adventure.text.Component;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 public abstract class PaginatedMenu extends Menu {
 
@@ -20,9 +23,18 @@ public abstract class PaginatedMenu extends Menu {
 
     //Set the border and menu buttons for the menu
     public void addMenuFooter(){
+
+        ItemStack cancelButton = new ItemStack(Material.STICK);
+        ItemMeta cancelButtonMeta = cancelButton.getItemMeta();
+        cancelButtonMeta.setCustomModelData(21);
+        cancelButtonMeta.displayName(Component.text("Cancel"));
+        cancelButton.setItemMeta(cancelButtonMeta);
+
+
+
         inventory.setItem(48, makeItem(Material.DARK_OAK_BUTTON, ChatColor.GREEN + "Left"));
 
-        inventory.setItem(49, makeItem(Material.BARRIER, ChatColor.DARK_RED + "Close"));
+        inventory.setItem(49, cancelButton);
 
         inventory.setItem(50, makeItem(Material.DARK_OAK_BUTTON, ChatColor.GREEN + "Right"));
 
