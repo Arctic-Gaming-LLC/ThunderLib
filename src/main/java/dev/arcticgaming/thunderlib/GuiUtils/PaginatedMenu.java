@@ -38,7 +38,7 @@ public abstract class PaginatedMenu extends Menu {
 
         ItemStack rightButton = new ItemStack(Material.STICK);
         ItemMeta rightButtonMeta = rightButton.getItemMeta();
-        rightButtonMeta.setCustomModelData(21);
+        rightButtonMeta.setCustomModelData(23);
         rightButtonMeta.displayName(Component.text(ChatColor.YELLOW + "Next Page"));
         rightButton.setItemMeta(rightButtonMeta);
 
