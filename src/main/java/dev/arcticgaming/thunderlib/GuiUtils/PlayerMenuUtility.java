@@ -8,7 +8,7 @@ import org.bukkit.inventory.ItemStack;
 public class PlayerMenuUtility {
 
     @Setter @Getter
-    private final Player owner;
+    private Player owner;
     @Setter @Getter
     private ItemStack item;
     @Setter @Getter

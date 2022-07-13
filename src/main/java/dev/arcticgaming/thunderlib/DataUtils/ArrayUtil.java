@@ -1,5 +1,7 @@
 package dev.arcticgaming.thunderlib.DataUtils;
 
+import net.kyori.adventure.text.Component;
+
 import java.util.UUID;
 
 public class ArrayUtil {
@@ -85,6 +87,28 @@ public class ArrayUtil {
         UUID[] newArray = new UUID[oldArray.length + 1];
 
         newArray[0] = value;
+        for (int i = 0; i < oldArray.length;) {
+            newArray[i + 1] = oldArray[i];
+            i++;
+        }
+
+        return newArray;
+    }
+
+    /**
+     * <h3>Array Util</h3>
+     * A handy tool to update arrays!
+     * Component Edition
+     *
+     * @param oldArray The current array that is being updated
+     * @param component The Kyori Adventure Component that an array is adding to
+     * @return Array of object type
+     */
+    public static Component[] addToArray(Component[] oldArray, Component component) {
+
+        Component[] newArray = new Component[oldArray.length + 1];
+
+        newArray[0] = component;
         for (int i = 0; i < oldArray.length;) {
             newArray[i + 1] = oldArray[i];
             i++;
@@ -184,6 +208,33 @@ public class ArrayUtil {
         for (int i = 0; i < oldArray.length;) {
 
             if (!oldArray[i].toString().equalsIgnoreCase(value.toString())) {
+                newArray[y] = oldArray[i];
+                y++;
+            }
+            i++;
+        }
+
+        return newArray;
+    }
+
+    /**
+     * <h3>Array Util</h3>
+     * A handy tool to shorten arrays!
+     * Component Edition!
+     *
+     * <h2>This method might not work!</h2>
+     *
+     * @param oldArray The current array that is being updated
+     * @param component The Kyori Adventure Components that an array is removing from
+     * @return Array of object type
+     */
+    public static Component[] removeFromArray(Component[] oldArray, Component component) {
+
+        Component[] newArray = new Component[oldArray.length - 1];
+        int y = 0;
+        for (int i = 0; i < oldArray.length;) {
+
+            if (!(oldArray[i] == component)) {
                 newArray[y] = oldArray[i];
                 y++;
             }
